@@ -6,10 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "bioseqkit"
 version = "0.1.0"
 authors = [
-  { name = "Your Name", email = "your.email@xxx.com" }
+  { name = "Ouyang Qinglang", email = "ouyang725@sjtu.edu.cn" } 
+  { name = "Lin Yushu", email = "benzi0228@sjtu.edu.cn" }
+  { name = "Liu Yijun", email = "liu_yijun@sjtu.edu.cn" }
 ]
 description = "Lightweight modular Python toolkit for FASTA/FASTQ parsing and bioinformatics sequence analysis, built from scratch for learning purposes."
-long_description = file: "README.md"
+long_description = "README.md"
 long_description_content_type = "text/markdown"
 license = { text = "MIT" }
 classifiers = [
