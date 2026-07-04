@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bioseqkit"
+version = "0.1.0"
+authors = [
+  { name = "Your Name", email = "your.email@xxx.com" }
+]
+description = "Lightweight modular Python toolkit for FASTA/FASTQ parsing and bioinformatics sequence analysis, built from scratch for learning purposes."
+long_description = file: "README.md"
+long_description_content_type = "text/markdown"
+license = { text = "MIT" }
+classifiers = [
+  "Programming Language :: Python :: 3.10",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "License :: OSI Approved :: MIT License"
+]
+requires-python = ">=3.9"
+dependencies = [
+  "matplotlib>=3.5",
+  "seaborn>=0.11",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=7.0",
+]
+dev = [
+  "pytest>=7.0",
+  "jupyter",
+  "black",
+  "isort"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Neuromancer-P/bioseqkit"
+
+[project.scripts]
+bioseqkit = "bioseqkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
