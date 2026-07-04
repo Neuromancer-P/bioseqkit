@@ -38,7 +38,7 @@ Built with `argparse`, subcommands include:
 
 ### 5. Testing & Visualization
 - Complete pytest test cases covering edge cases: empty files, incomplete records, illegal bases, line-break missing at EOF
-- Jupyter Notebook workflow with *E. coli K-12* and human chrM mitochondrial genome
+- Jupyter Notebook workflow with human chrM mitochondrial genome
 - Visualization of base distribution pie charts, GC-content histograms and k-mer frequency plots via Matplotlib & Seaborn
 
 ## System Architecture
