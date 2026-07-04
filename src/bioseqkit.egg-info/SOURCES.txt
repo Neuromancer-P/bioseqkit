@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+setup.py
+src/bioseqkit/__init__.py
+src/bioseqkit/cli.py
+src/bioseqkit/models.py
+src/bioseqkit/operations.py
+src/bioseqkit/parser.py
+src/bioseqkit/stats.py
+src/bioseqkit/utils.py
+src/bioseqkit.egg-info/PKG-INFO
+src/bioseqkit.egg-info/SOURCES.txt
+src/bioseqkit.egg-info/dependency_links.txt
+src/bioseqkit.egg-info/entry_points.txt
+src/bioseqkit.egg-info/top_level.txt

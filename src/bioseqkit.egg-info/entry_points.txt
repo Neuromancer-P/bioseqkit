@@ -1,0 +1,2 @@
+[console_scripts]
+bioseqkit = genbankx.cli:main
