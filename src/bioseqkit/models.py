@@ -63,6 +63,8 @@ class SeqRecord:
     ----------
     id : str
         序列标识符（FASTA '>' 后或 FASTQ '@' 后的第一行，不含前缀符号）。
+    description : str
+        FASTA/FASTQ 头部中除 ID 之外的描述信息。
     seq : str
         核苷酸序列字符串（已去除换行，保持原始大小写）。
     quality : str or None
@@ -71,6 +73,7 @@ class SeqRecord:
 
     id: str
     seq: str
+    description: str = ""
     quality: Optional[str] = None
 
     def __post_init__(self) -> None:

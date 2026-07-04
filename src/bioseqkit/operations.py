@@ -2,7 +2,7 @@
 src/genbankx/operations.py
 序列操作算法模块
 """
-from models import SeqRecord
+from bioseqkit.models import SeqRecord
 from typing import Dict, List, Tuple, Optional
 
 # 碱基互补映射

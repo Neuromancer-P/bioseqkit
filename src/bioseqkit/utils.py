@@ -9,7 +9,6 @@
 from __future__ import annotations
 
 import gzip
-import io
 from contextlib import contextmanager
 from enum import Enum
 from pathlib import Path

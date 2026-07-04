@@ -3,8 +3,8 @@ src/genbankx/parser.py
 核心序列解析器：支持 FASTA/FASTQ 格式的流式解析
 """
 from typing import Generator, Tuple, IO, Optional
-from models import SeqRecord
-from utils import open_sequence_file, detect_format
+from bioseqkit.models import SeqRecord
+from bioseqkit.utils import open_sequence_file, detect_format
 
 def parse_fasta(file_handle: IO[str]) -> Generator[SeqRecord, None, None]:
     """

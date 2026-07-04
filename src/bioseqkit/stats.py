@@ -2,8 +2,8 @@
 src/genbankx/stats.py
 序列统计算法模块
 """
-from models import SeqRecord
-from utils import open_sequence_file, detect_format
+from bioseqkit.models import SeqRecord
+from bioseqkit.utils import FileFormat, open_sequence_file, detect_format
 from typing import Dict, List
 
 def calculate_length(seq: str) -> int:
@@ -55,20 +55,20 @@ def calculate_stats_from_file(file_path: str) -> List[Dict]:
     Returns:
         每条序列的统计信息列表
     """
-    from parser import parse_fasta, parse_fastq
+    from bioseqkit.parser import parse_fasta, parse_fastq
     
     stats_list = []
     file_format = detect_format(file_path)
     
     with open_sequence_file(file_path) as file_handle:
-        if file_format == 'fasta':
+        if file_format == FileFormat.FASTA:
             for seq_record in parse_fasta(file_handle):
                 stats_list.append({
                     'id': seq_record.id,
                     'description': seq_record.description,
                     **calculate_sequence_stats(seq_record)
                 })
-        elif file_format == 'fastq':
+        elif file_format == FileFormat.FASTQ:
             for seq_record in parse_fastq(file_handle):
                 stats_list.append({
                     'id': seq_record.id,

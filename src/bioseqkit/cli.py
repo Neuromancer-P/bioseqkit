@@ -7,11 +7,11 @@ import sys
 from typing import List, Dict, Optional
 from pathlib import Path
 
-from parser import parse_fasta, parse_fastq
-from stats import calculate_sequence_stats
-from operations import reverse_complement, six_frame_translation
-from utils import open_sequence_file, detect_format
-from models import SeqRecord
+from bioseqkit.parser import parse_fasta, parse_fastq
+from bioseqkit.stats import calculate_sequence_stats
+from bioseqkit.operations import reverse_complement, six_frame_translation
+from bioseqkit.utils import FileFormat, open_sequence_file, detect_format
+from bioseqkit.models import SeqRecord
 
 
 def cmd_stats(args):
@@ -26,9 +26,9 @@ def cmd_stats(args):
         # 解析并统计
         results = []
         with open_sequence_file(file_path) as file_handle:
-            if file_format == 'fasta':
+            if file_format == FileFormat.FASTA:
                 parser = parse_fasta(file_handle)
-            elif file_format == 'fastq':
+            elif file_format == FileFormat.FASTQ:
                 parser = parse_fastq(file_handle)
             else:
                 print(f"错误：不支持的文件格式 '{file_format}'", file=sys.stderr)
@@ -65,9 +65,9 @@ def cmd_revcomp(args):
         file_format = detect_format(file_path)
         
         with open_sequence_file(file_path) as file_handle:
-            if file_format == 'fasta':
+            if file_format == FileFormat.FASTA:
                 parser = parse_fasta(file_handle)
-            elif file_format == 'fastq':
+            elif file_format == FileFormat.FASTQ:
                 parser = parse_fastq(file_handle)
             else:
                 print(f"错误：不支持的文件格式 '{file_format}'", file=sys.stderr)
@@ -104,9 +104,9 @@ def cmd_translate(args):
         file_format = detect_format(file_path)
         
         with open_sequence_file(file_path) as file_handle:
-            if file_format == 'fasta':
+            if file_format == FileFormat.FASTA:
                 parser = parse_fasta(file_handle)
-            elif file_format == 'fastq':
+            elif file_format == FileFormat.FASTQ:
                 parser = parse_fastq(file_handle)
             else:
                 print(f"错误：不支持的文件格式 '{file_format}'", file=sys.stderr)
@@ -122,7 +122,7 @@ def cmd_translate(args):
                         print(protein)
                 else:
                     # 单框翻译
-                    from operations import translate
+                    from bioseqkit.operations import translate
                     protein = translate(seq_record.seq, frame)
                     print(f">{seq_record.id} Frame {frame}")
                     print(protein)
