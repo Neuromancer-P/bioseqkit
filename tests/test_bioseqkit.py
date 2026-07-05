@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 project_root = Path(__file__).resolve().parents[1]
-module_path = project_root / "src" / "bioseqkit"
+module_path = project_root / "src" / "bioseqkits"
 sys.path.insert(0, str(module_path))
 
 from utils import open_sequence_file, detect_format, FileFormat

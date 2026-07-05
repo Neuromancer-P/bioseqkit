@@ -1,13 +1,13 @@
-# bioseqkit
+# bioseqkits
 
 A lightweight modular Python toolkit for FASTA/FASTQ parsing and sequence analysis, implemented from scratch with pure Python.
 
 ## Project Overview
 
-`bioseqkit` is a teaching-oriented toolkit that recreates core FASTA/FASTQ parsing and sequence analysis logic without relying on `Bio.SeqIO` or other sequence parsing libraries. It uses Python generators to parse sequence files in a streaming fashion, supports plain and gzip-compressed input, and exposes common bioinformatics operations through both a Python API and a command-line interface.
+`bioseqkits` is a teaching-oriented toolkit that recreates core FASTA/FASTQ parsing and sequence analysis logic without relying on `Bio.SeqIO` or other sequence parsing libraries. It uses Python generators to parse sequence files in a streaming fashion, supports plain and gzip-compressed input, and exposes common bioinformatics operations through both a Python API and a command-line interface.
 
 This repository currently includes:
-- `src/bioseqkit/` package with parser, sequence model, operations, stats, and CLI modules
+- `src/bioseqkits/` package with parser, sequence model, operations, stats, and CLI modules
 - pytest-based unit tests under `tests/`
 - Jupyter notebooks for interactive sequence analysis and validation
 
@@ -66,9 +66,9 @@ pip install -e .[dev]
 
 ### Python API example
 ```python
-from bioseqkit.parser import parse_fasta
-from bioseqkit.operations import reverse_complement, dna_to_rna
-from bioseqkit.stats import calculate_sequence_stats
+from bioseqkits.parser import parse_fasta
+from bioseqkits.operations import reverse_complement, dna_to_rna
+from bioseqkits.stats import calculate_sequence_stats
 
 with open('tests/data/sequence.fasta') as fh:
     for record in parse_fasta(fh):
@@ -80,9 +80,9 @@ with open('tests/data/sequence.fasta') as fh:
 
 ### Run CLI commands
 ```bash
-bioseqkit stats tests/data/sequence.fasta
-bioseqkit revcomp tests/data/sequence.fasta -o output_revcomp.fasta
-bioseqkit translate tests/data/sequence.fasta --frame 0
+bioseqkits stats tests/data/sequence.fasta
+bioseqkits revcomp tests/data/sequence.fasta -o output_revcomp.fasta
+bioseqkits translate tests/data/sequence.fasta --frame 0
 ```
 
 ### Run tests
@@ -93,7 +93,7 @@ pytest tests/ -v
 ## Project Structure
 
 ```
-src/bioseqkit/
+src/bioseqkits/
 ├── cli.py
 ├── models.py
 ├── operations.py
@@ -116,7 +116,7 @@ setup.py
 
 ## Packaging
 
-This project is configured with `pyproject.toml` and uses `setuptools` for packaging. The package exposes a console script named `bioseqkit` that points to `bioseqkit.cli:main`.
+This project is configured with `pyproject.toml` and uses `setuptools` for packaging. The package exposes a console script named `bioseqkits` that points to `bioseqkits.cli:main`.
 
 ## License
 

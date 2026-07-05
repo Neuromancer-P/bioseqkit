@@ -1,0 +1,13 @@
+
+[dev]
+pytest>=7.0
+jupyter
+black
+isort
+
+[notebook]
+matplotlib>=3.5
+seaborn>=0.11
+
+[test]
+pytest>=7.0

@@ -5,7 +5,7 @@ here = Path(__file__).resolve().parent
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="bioseqkit",
+    name="bioseqkits",
     version="0.1.0",
     description="Lightweight Python toolkit for FASTA/FASTQ parsing and bioinformatics sequence analysis.",
     long_description=long_description,
@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "bioseqkit=bioseqkit.cli:main",
+            "bioseqkits=bioseqkits.cli:main",
         ],
     },
     classifiers=[

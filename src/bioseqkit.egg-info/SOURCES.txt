@@ -12,4 +12,6 @@ src/bioseqkit.egg-info/PKG-INFO
 src/bioseqkit.egg-info/SOURCES.txt
 src/bioseqkit.egg-info/dependency_links.txt
 src/bioseqkit.egg-info/entry_points.txt
+src/bioseqkit.egg-info/requires.txt
 src/bioseqkit.egg-info/top_level.txt
+tests/test_bioseqkit.py

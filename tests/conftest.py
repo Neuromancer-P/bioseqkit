@@ -59,3 +59,9 @@ def gzipped_fasta(simple_fasta: Path, tmp_dir: Path) -> Path:
         with gzip.open(gz_path, "wb") as f_out:
             f_out.write(f_in.read())
     return gz_path
+
+
+@pytest.fixture()
+def sequence_fasta() -> Path:
+    """返回 tests/data/sequence.fasta 的路径。"""
+    return Path(__file__).parent / "data" / "sequence.fasta"

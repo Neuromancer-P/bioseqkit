@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "bioseqkit"
+name = "bioseqkits"
 version = "0.1.0"
 authors = [
   { name = "Ouyang Qinglang", email = "ouyang725@sjtu.edu.cn" }, 
@@ -11,8 +11,7 @@ authors = [
   { name = "Liu Yijun", email = "liu_yijun@sjtu.edu.cn" }
 ]
 description = "Lightweight Python toolkit for FASTA/FASTQ parsing and bioinformatics sequence analysis."
-readme = "README.md"
-readme-content-type = "text/markdown"
+readme = {file = "README.md", content-type = "text/markdown"}
 license = { text = "MIT" }
 classifiers = [
   "Programming Language :: Python :: 3.10",
@@ -40,10 +39,10 @@ dev = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Neuromancer-P/bioseqkit"
+"Homepage" = "https://github.com/Neuromancer-P/bioseqkits"
 
 [project.scripts]
-bioseqkit = "bioseqkit.cli:main"
+bioseqkits = "bioseqkits.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
