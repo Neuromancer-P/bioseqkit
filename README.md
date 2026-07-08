@@ -41,7 +41,7 @@ Supported subcommands:
 
 ### 5. Testing and Notebooks
 - `pytest` test suite for parser and algorithm edge cases
-- Notebook examples for FASTA analysis and validation
+- Notebook examples for FASTA analysis and validation luchenyu
 - Current notebook file: `analysis_sequence_fasta.ipynb`
 
 ## Installation
